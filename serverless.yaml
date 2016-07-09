@@ -1,0 +1,9 @@
+service: ddns
+provider: aws
+functions:
+    update:
+        handler: handler.update
+        events:
+            - http:
+                path: update
+                method: get
