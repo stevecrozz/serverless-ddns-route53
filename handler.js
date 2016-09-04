@@ -26,7 +26,7 @@ module.exports.update = (event, context, cb) => {
   }, function (err, data) {
     if (err) {
       console.log(err, err.stack);
-      cb('Failed to update record set', { message: 'FAIL', err: err.stack })
+      cb('Failed to update record set: ' + JSON.stringify({ message: 'FAIL', err: err.stack }))
     } else {
       cb(null, { message: 'OK' })
     }

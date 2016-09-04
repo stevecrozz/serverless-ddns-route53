@@ -1,0 +1,11 @@
+service: ddns-route53
+provider:
+  name: aws
+  runtime: nodejs4.3
+functions:
+  update:
+    handler: handler.update
+    events:
+      - http:
+          path: ddns/update
+          method: get
